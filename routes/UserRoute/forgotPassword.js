@@ -13,6 +13,7 @@ router.post("/", async (req, res) => {
     if (!user)
       return res.status(409).send({
         message: "Email is not registered",
+        success: false,
       });
 
     const randomString = crypto.randomBytes(20).toString("hex");
@@ -39,11 +40,13 @@ router.post("/", async (req, res) => {
     await sendEmail(user.email, "Password Reset", htmlContent);
     res.status(200).json({
       message: "Password reset link sent to your email",
+      success: true,
       randomString: randomString,
     });
   } catch (error) {
     res.status(500).json({
       message: "Internal Server Error",
+      success: false,
     });
   }
 });
