@@ -1,4 +1,4 @@
-## Online Music Player
+# Online Music Player
 
 ## Overview
 
@@ -12,6 +12,6 @@ BeatFlow is a music app where users can listen to music, save music to their acc
 
 - MongoDB
 
-# Start command
+## Start command
 
 To start the server run _npm run dev_
